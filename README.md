@@ -1,4 +1,4 @@
---Author: Yangwei Shi/ GeingerLab
+--Author: Yangwei Shi/ GingerLab@UW
 
 Sci1Page repository consists of comprehensive functions for plotting published figures.
 
