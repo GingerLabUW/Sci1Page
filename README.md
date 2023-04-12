@@ -1,3 +1,4 @@
+--Author: Yangwei Shi/ GeingerLab
 Sci1Page repository consists of comprehensive functions for plotting published figures.
 
 Based on the jupyter notebook, you can plot figures or analyze your data, keeping track of the research progress.
