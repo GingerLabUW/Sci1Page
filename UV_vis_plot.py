@@ -11,22 +11,24 @@ write a function for plotting UV-vis
 
 """
 
-def UV_vis_plot(filePath = '',fileNames = [], labels = [], traceColors = ['C0','C1','C2','C3'], FigName='UV_vis.png', xaixsRange = [500,800]):
+def UV_vis_plot(filePath = '',fileNames = [], labels = [], traceColors = ['C0','C1','C2','C3'], FigName='UV_vis.png', xlim = [500,800],ylim=[0,4]):
     """
     ---This function is used to plot the XRD spectra of mutiple samples---
     --KeyWords include the following items--
     1. filePath:--copy the full file path here. 
-    2. fileNames: Can specify what you would like to call it
+    2. fileNames: should conver your file to csv file, and without extension in the file name
     3. labels: labels for all the xrd files, the sequence should be correct
     4. traceColors: defalt value is ['C0','C1','C2','C3']
-    5. xaixsRange: the range of x axis, default value is [500,800]
+    5. FigName: give the figure a name
+    6. xlim: the range of x axis, default value is [500,800], change this range as needed
+    7. ylim: defalt range is [0,4], change this range as needed
     """
     folder = filePath
     fileNames = fileNames
     labels = labels
     traceColors = traceColors
     FigName = FigName
-    xaixsRange = xaixsRange
+    xlim = xlim
     
     font={'weight' : 'bold',
       'size' : 22,
@@ -40,7 +42,8 @@ def UV_vis_plot(filePath = '',fileNames = [], labels = [], traceColors = ['C0','
         data.append(df)
             
     fig,axs = plt.subplots(figsize=(8.8,6.6))
-    axs.set_xlim(xaixsRange)
+    axs.set_xlim(xlim)
+    axs.set_ylim(ylim)
     plt.yticks([]) # hide y axis values
     axs.set_xlabel('2\u03B8 (\u00B0)',fontweight='bold',fontsize=22) # 2 theta, degree
     axs.set_ylabel('Intensity (a.u.)',fontweight='bold',fontsize=22)
