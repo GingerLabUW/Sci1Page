@@ -15,6 +15,10 @@ The functions will include:
 5. Solar cell devcice parameters extraction (Voc, Jsc, FF, PCE)
 6. box plot
 
-and many more (will be included as they are done)......
+and many more (will be included when they are done)......
 
-The data folder contains the various data for the exemplary example.ipynb.
+The data folder contains the various data for the exemplary example_Sci1Page.ipynb.
+
+How to use this Sci1Page? Please refer to the example_Sci1Page.ipynb.
+
+Basically, import the function, use help() function to identify the input parameters, becareful to read those instructions.
