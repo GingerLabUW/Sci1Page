@@ -13,7 +13,7 @@ def XRD_plot(filePath = '',fileNames = [], labels = [], traceColors = ['C0','C1'
     ---This function is used to plot the XRD spectra of mutiple samples---
     --KeyWords include the following items--
     1. filePath:--copy the full file path here. 
-    2. fileNames: Can specify what you would like to call it
+    2. fileNames: Can specify what you would like to call it. remember to have the extension for your file. In MAF, it is .xy
     3. labels: labels for all the xrd files, the sequence should be correct
     4. traceColors: defalt value is ['C0','C1','C2','C3'], you could change the colors to the ones you like
     5. Norm = Norm, defalt value is 'norm'. if not specify, will consider as not normalized
