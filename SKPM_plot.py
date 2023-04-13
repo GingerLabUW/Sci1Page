@@ -6,14 +6,15 @@ from igor import binarywave as bw
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 
-def SKPM_plot(filePath = '', fileName='', scale = 4, cmap='magma', figName='SKPM.png'):
+def SKPM_plot(filePath = '', fileName='', scale = 4, cmap='magma', FigName='SKPM.png'):
     """
     ---This is for plotting the SKPM image, potential part---
-    filePath: complete file path
-    fileName: filename without extension as extension .ibw has been attached inside of the code
-    cmap = cmap
-    scale: image size, i.g. 4um x 4um just type 4, by the way, the defalt pixel in x axis is 256
-    figName = figName
+    1. filePath: complete file path
+    2. fileName: filename without extension as extension .ibw has been attached inside of the code
+    3. cmap = cmap
+    4. scale: image size, i.g. 4um x 4um just type 4, by the way, the defalt pixel in x axis is 256
+       the default scale is set to 1 um
+    5. FigName = FigName
     """
     
     font={'weight' : 'bold',
@@ -41,7 +42,7 @@ def SKPM_plot(filePath = '', fileName='', scale = 4, cmap='magma', figName='SKPM
     
     # draw a scale
     scale = scale # um
-    x = [245-256/(scale), 245] # 1 um
+    x = [245-256/(scale), 245] # 1 um,
     y = [245, 245]
     plt.plot(x, y, color="white", linewidth=6.5)
     
@@ -51,7 +52,7 @@ def SKPM_plot(filePath = '', fileName='', scale = 4, cmap='magma', figName='SKPM
         axs.tick_params(direction='in',width=3,length=6)
     plt.tight_layout()
     # save figure
-    plt.savefig(folder + figName, bbox_inches='tight', dpi=300)
+    plt.savefig(folder + FigName, bbox_inches='tight', dpi=300)
     
     
     
