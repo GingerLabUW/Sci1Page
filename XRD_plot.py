@@ -8,16 +8,16 @@ write a function for plotting UV-vis and XRD patterns
 
 """
 
-def XRD_plot(filePath = '',fileNames = [], labels = [], traceColors = ['C0','C1','C2','C3'], Norm = 'norm', FigName='XRD', xaixsRange = [5,75]):
+def XRD_plot(filePath = '',fileNames = [], labels = [], traceColors = ['C0','C1','C2','C3'], Norm = 'norm', FigName='XRD', xlim = [5,75]):
     """
     ---This function is used to plot the XRD spectra of mutiple samples---
     --KeyWords include the following items--
     1. filePath:--copy the full file path here. 
     2. fileNames: Can specify what you would like to call it
     3. labels: labels for all the xrd files, the sequence should be correct
-    4. traceColors: defalt value is ['C0','C1','C2','C3']
+    4. traceColors: defalt value is ['C0','C1','C2','C3'], you could change the colors to the ones you like
     5. Norm = Norm, defalt value is 'norm'. if not specify, will consider as not normalized
-    6. xaixsRange: the range of x axis, default value is [5,75]
+    6. xlim: the range of x axis, default value is [5,75]
     """
     folder = filePath
     fileNames = fileNames
@@ -25,7 +25,7 @@ def XRD_plot(filePath = '',fileNames = [], labels = [], traceColors = ['C0','C1'
     traceColors = traceColors
     Norm = Norm
     FigName = FigName
-    xaixsRange = xaixsRange
+    xlim = xlim
     
     font={'weight' : 'bold',
       'size' : 22,
@@ -44,7 +44,7 @@ def XRD_plot(filePath = '',fileNames = [], labels = [], traceColors = ['C0','C1'
             data.append(df[[0,1]])
             
         fig,axs = plt.subplots(figsize=(8.8,6.6))
-        axs.set_xlim(xaixsRange)
+        axs.set_xlim(xlim)
         plt.yticks([]) # hide y axis values
         axs.set_xlabel('2\u03B8 (\u00B0)',fontweight='bold',fontsize=22) # 2 theta, degree
         axs.set_ylabel('Intensity (a.u.)',fontweight='bold',fontsize=22)
