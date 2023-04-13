@@ -6,7 +6,7 @@ from igor import binarywave as bw
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 
-def SKPM_plot(filePath = '', fileName='', scale = 4, cmap='magma', FigName='SKPM.png'):
+def SKPM_plot(filePath = '', fileName='', scale = 4, cmap='magma', clim = [90,120],FigName='SKPM.png'):
     """
     ---This is for plotting the SKPM image, potential part---
     1. filePath: complete file path
@@ -14,7 +14,8 @@ def SKPM_plot(filePath = '', fileName='', scale = 4, cmap='magma', FigName='SKPM
     3. cmap = cmap
     4. scale: image size, i.g. 4um x 4um just type 4, by the way, the defalt pixel in x axis is 256
        the default scale is set to 1 um
-    5. FigName = FigName
+    5. clim: colorbar range, based on the raw image, change this range
+    6. FigName = FigName
     """
     
     font={'weight' : 'bold',
@@ -25,17 +26,17 @@ def SKPM_plot(filePath = '', fileName='', scale = 4, cmap='magma', FigName='SKPM
     folder = filePath
     df = bw.load(folder + fileName +'.ibw')
     df_skpm = df['wave']['wData']
-    df_potential = df_skpm[:,:,3]
+    df_potential = df_skpm[:,:,3]*1000
    
     
     fig,axs = plt.subplots(figsize=(8,6))
     plt.imshow(df_potential,cmap=cmap)
     # costimize colobar
     cbar=plt.colorbar()
-    cbar.set_label('Potential (V)', rotation=270, fontsize=20, fontweight='bold',labelpad=18) #labelpad=20
+    cbar.mappable.set_clim(90,120)  # Range
+    cbar.set_label('Potential (mV)', rotation=270, fontsize=20, fontweight='bold',labelpad=18) #labelpad=20
     cbar.outline.set_linewidth(3)
     cbar.ax.tick_params(width=3,labelsize=20)
-    #plt.clim(0.6,1.1)  # Range
     plt.tight_layout()
     plt.xticks([])
     plt.yticks([])
