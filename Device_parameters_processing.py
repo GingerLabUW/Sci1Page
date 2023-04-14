@@ -7,7 +7,7 @@ import pandas as pd
 from scipy.optimize import fmin, fsolve
 from scipy.interpolate import interp1d
 
-def Device_parameters(filePath = '',cells = [], pixels = ['1_scan_0','2_scan_0','3_scan_0','4_scan_0','5_scan_0','6_scan_0','7_scan_0','8_scan_0']):
+def Device_parameters_processing(filePath = '',cells = [], pixels = ['1_scan_0','2_scan_0','3_scan_0','4_scan_0','5_scan_0','6_scan_0','7_scan_0','8_scan_0']):
     """
     ----This function is to recalculate the device paramters (Voc, PCE, FF, Jsc) from JV scans----
     filePath: String
